@@ -1,3 +1,4 @@
 
-let ft_test_sign x =
-    if x >= 0 then print_endline "positive" else print_endline "negative"
+let ft_test_sign x = match (x < 0) with
+    | true -> print_endline "negative"
+    | false -> print_endline "positive"
