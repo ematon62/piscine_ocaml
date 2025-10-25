@@ -4,6 +4,9 @@ let ft_test_sign (x : int) : unit =
   else 
     print_endline "positive"
 
+(*
+    Main
+*)
 let test (x : int) : unit = 
   print_string ("Sign of " ^ (string_of_int x) ^ "? -> "); ft_test_sign x
 
