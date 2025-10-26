@@ -8,7 +8,10 @@ let rec ft_countdown (x : int) : unit =
     let _ = ft_print_int x in
     ft_countdown (x - 1)
 
-let main =
+(*
+    Main
+*)
+let _ =
   print_endline " ------------------------------- Test for 10 -------------------------------";
   ft_countdown 10;
   print_endline "-------------------------------- Test for 3 --------------------------------";

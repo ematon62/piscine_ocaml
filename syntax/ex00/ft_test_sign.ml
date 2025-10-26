@@ -10,4 +10,7 @@ let ft_test_sign (x : int) : unit =
 let test (x : int) : unit = 
   print_string ("Sign of " ^ (string_of_int x) ^ "? -> "); ft_test_sign x
 
-let () = test 0; test 1; test (-1)
+let main =
+  test 0;
+  test 1;
+  test (-1)

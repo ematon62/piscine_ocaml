@@ -15,4 +15,4 @@ let ft_print_alphabet () : unit =
 (*
   Main
 *)
-let _ = ft_print_alphabet ()
+let main = ft_print_alphabet ()
