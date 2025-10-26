@@ -11,14 +11,14 @@ let rec ft_countdown (x : int) : unit =
 (*
     Main
 *)
+let test (x : int) = 
+  let _ = print_endline ("Test for " ^ string_of_int x ^ ": ") in
+  let _ = ft_countdown x in
+  print_newline ()
+
 let _ =
-  print_endline " ------------------------------- Test for 10 -------------------------------";
-  ft_countdown 10;
-  print_endline "-------------------------------- Test for 3 --------------------------------";
-  ft_countdown 3;
-  print_endline "-------------------------------- Test for 0 --------------------------------";
-  ft_countdown 0;
-  print_endline "-------------------------------- Test for -42 ------------------------------";
-  ft_countdown (-42);
-  print_endline "-------------------------------- Test for -10 ------------------------------";
-  ft_countdown (-10);
+  test 10;
+  test 3;
+  test 0;
+  test (-42);
+  test (-10);

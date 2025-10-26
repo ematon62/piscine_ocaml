@@ -8,24 +8,19 @@ let rec ft_power (x : int) (n : int) : int =
 (*
     Main
 *)
+let test (x : int) (y : int) =
+  let _ = print_endline ("ft_power " ^ string_of_int x ^ " " ^ string_of_int y ^ ": ") in
+  let _ = print_int (ft_power x y) in
+  print_newline ()
+
 let _ =
-  print_endline " ------------------------------- ft_power 2 2 -------------------------------";
-  print_int (ft_power 2 2); print_newline();
-  print_endline " ------------------------------- ft_power 2 3 -------------------------------";
-  print_int (ft_power 2 3); print_newline();
-  print_endline " ------------------------------- ft_power 2 4 -------------------------------";
-  print_int (ft_power 2 4); print_newline();
-  print_endline " ------------------------------- ft_power 2 5 -------------------------------";
-  print_int (ft_power 2 5); print_newline();
-  print_endline " ------------------------------- ft_power 3 1 -------------------------------";
-  print_int (ft_power 3 1); print_newline();
-  print_endline " ------------------------------- ft_power 3 2 -------------------------------";
-  print_int (ft_power 3 2); print_newline();
-  print_endline " ------------------------------- ft_power 4 5 -------------------------------";
-  print_int (ft_power 4 5); print_newline();
-  print_endline " ------------------------------- ft_power 1 10 -------------------------------";
-  print_int (ft_power 1 10); print_newline();
-  print_endline " ------------------------------- ft_power 5 0 -------------------------------";
-  print_int (ft_power 5 0); print_newline();
-  print_endline " ------------------------------- ft_power 0 5 -------------------------------";
-  print_int (ft_power 0 5); print_newline();
+  test 2 2;
+  test 2 3;
+  test 2 4;
+  test 2 5;
+  test 3 1;
+  test 3 2;
+  test 4 5;
+  test 1 10;
+  test 5 0;
+  test 0 5;

@@ -18,8 +18,11 @@ let ft_print_rev (s : string) : unit =
 (*
 		Main
 *)
+let test s =
+	let _ = print_string (s ^ " reversed : ") in ft_print_rev s
+
 let main =
-	print_string "\"Hello World\" reversed: "; ft_print_rev "Hello World!";
-	print_string "\"abcdefghijklmnopqrstuvwxyz\" reversed: "; ft_print_rev "abcdefghijklmnopqrstuvwxyz";
-	print_string "\"\" reversed: "; ft_print_rev "";
-	print_string "\"a\" reversed: "; ft_print_rev "a";
+	test "Hello World!";
+	test "abcdefghijklmnopqrstuvwxyz";
+	test "";
+	test "a";

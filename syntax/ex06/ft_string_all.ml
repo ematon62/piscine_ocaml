@@ -4,7 +4,6 @@
 		You use predicate functions to check if your input meets some condition.
 *)
 
-
 let ft_string_all (f : (char -> bool)) (s : string) : bool =
 	let rec ft_check_string (f : (char -> bool)) (s : string) (i : int) : bool = 
 		if (i = String.length s) then
@@ -25,30 +24,27 @@ let is_lower_alpha (c : char) : bool = (c >= 'a') && (c <= 'z')
 
 let is_upper_alpha (c : char) : bool = (c >= 'A') && (c <= 'Z')
 
+let test (f : (char -> bool)) (s : string) : unit = 
+	let _ = print_string ("function call with string: " ^ s ^ ": ")  in
+	print_endline (if ft_string_all f s then "true" else "false")
+
 let _ =
-	let _ = print_string "ft_string_all is_digit \"abcdef\": " in
-	print_endline (if ft_string_all is_digit "abcdef1" then "true" else "false")
-	
-let _ = 
-	let _ = print_string "ft_string_all is_digit \"12456\": " in
-	print_endline (if ft_string_all is_digit "12345" then "true" else "false")
-
-let _ = 
-	let _ = print_string "ft_string_all is_lower_alpha \"abcdef\": " in
-	print_endline (if ft_string_all is_lower_alpha "abcdef" then "true" else "false")
-
-let _ = 
-	let _ = print_string "ft_string_all is_lower_alpha \"ABCDEF\": " in
-	print_endline (if ft_string_all is_lower_alpha "ABCDEF" then "true" else "false")
-
-let _ = 
-	let _ = print_string "ft_string_all is_upper_alpha \"ABCDEF\": " in
-	print_endline (if ft_string_all is_upper_alpha "ABCDEF" then "true" else "false")
-
-let _ = 
-	let _ = print_string "ft_string_all is_upper_alpha \"abcdef\": " in
-	print_endline (if ft_string_all is_upper_alpha "abcdef" then "true" else "false")
-
-let _ = 
-	let _ = print_string "ft_string_all is_digit \"\": " in
-	print_endline (if ft_string_all is_digit "" then "true" else "false")
+	print_endline "------------- Tests for is_digit -------------";
+	test is_digit "1abcdef1";
+	test is_digit "12345";
+	test is_digit "12345a ";
+	test is_digit "1" ;
+	test is_digit "" ;
+	print_endline "------------- Tests for is_lower_alpha -------------" ;
+	test is_lower_alpha "1abcdef1" ;
+	test is_lower_alpha "12345" ;
+	test is_lower_alpha "abcdef " ;
+	test is_lower_alpha "a" ;
+	test is_lower_alpha "" ;
+	print_endline "------------- Tests for is_upper_alpha -------------" ;
+	test is_lower_alpha "1abcdef1" ;
+	test is_lower_alpha "12345" ;
+	test is_lower_alpha "abcdef " ;
+	test is_lower_alpha "ABCDEF " ;
+	test is_lower_alpha "A" ;
+	test is_lower_alpha ""
