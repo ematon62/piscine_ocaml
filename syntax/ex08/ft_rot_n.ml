@@ -2,8 +2,8 @@ let lower_offset = 97
 let upper_offset = 65
 
 let is_lower_alpha (c : char) : bool = (c >= 'a') && (c <= 'z')
-
 let is_upper_alpha (c : char) : bool = (c >= 'A') && (c <= 'Z')
+
 
 let ft_rot_1 (c : char) : char =
   if not (is_lower_alpha c || is_upper_alpha c) then
