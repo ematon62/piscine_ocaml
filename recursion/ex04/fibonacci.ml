@@ -21,7 +21,7 @@ let fibonacci (n : int) : int =
           i + j
         else
           fibo_aux (i + j) (i) (k - 1) in
-    fibo_aux 0 1 n
+  fibo_aux 0 1 n
 
 (*
   Main
