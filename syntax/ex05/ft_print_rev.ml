@@ -19,7 +19,8 @@ let ft_print_rev (s : string) : unit =
 		Main
 *)
 let test s =
-	let _ = print_string (s ^ " reversed : ") in ft_print_rev s
+	Printf.printf "%s reversed: " s;
+	(ft_print_rev s); print_newline ()
 
 let main =
 	test "Hello World!";

@@ -12,8 +12,8 @@ let rec ft_countdown (x : int) : unit =
     Main
 *)
 let test (x : int) = 
-  let _ = print_endline ("Test for " ^ string_of_int x ^ ": ") in
-  let _ = ft_countdown x in
+  Printf.printf "Test for %d: " x;
+  ft_countdown x;
   print_newline ()
 
 let _ =

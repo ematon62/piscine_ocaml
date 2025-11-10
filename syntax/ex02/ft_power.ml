@@ -9,9 +9,7 @@ let rec ft_power (x : int) (n : int) : int =
     Main
 *)
 let test (x : int) (y : int) =
-  let _ = print_endline ("ft_power " ^ string_of_int x ^ " " ^ string_of_int y ^ ": ") in
-  let _ = print_int (ft_power x y) in
-  print_newline ()
+  Printf.printf "ft_power %d %d: %d\n" x y (ft_power x y)
 
 let _ =
   test 2 2;

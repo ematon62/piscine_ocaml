@@ -26,8 +26,7 @@ let rec ft_rot_n (n : int) (s : string) : string =
     Main
 *)
 let test n s =
-  let _ = print_string ("ft_rot_n " ^ string_of_int n ^ " " ^ s ^ ": ") in
-  print_endline (ft_rot_n n s)
+  Printf.printf "ft_rot_n %d %s: %s\n" n s (ft_rot_n n s)
 
 let _ = 
   test 1 "abcdefghijklmnopqrstuvwxyz";

@@ -7,8 +7,8 @@ let ft_test_sign (x : int) : unit =
 (*
     Main
 *)
-let test (x : int) : unit = 
-  print_string ("Sign of " ^ (string_of_int x) ^ "? -> "); ft_test_sign x
+let test (x : int) : unit =
+  let _ = Printf.printf "Sign of %d -> " x in ft_test_sign x
 
 let main =
   test 0;

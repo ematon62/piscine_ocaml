@@ -29,7 +29,6 @@ let ft_print_comb () : unit =
     else
       let _ = ft_tens (n1) (n1 + 1) in
       ft_hundreds(n1 + 1) in
-  
   ft_hundreds 0; print_string "\n"
 
 (*

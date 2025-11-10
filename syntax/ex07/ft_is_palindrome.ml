@@ -20,7 +20,7 @@ let ft_is_palindrome (s : string) : bool =
   Main
 *)
 let test s = 
-  let _ = print_string (s ^ " is palindrome? -> ") in
+  Printf.printf "%s is palindrome? -> " s;
   print_endline (if ft_is_palindrome s then "yes" else "no")
 
 let _ = 
