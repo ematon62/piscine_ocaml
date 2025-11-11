@@ -11,5 +11,21 @@ let leibniz_pi (delta : float) : int =
     if gap <= delta then
       n
     else
-      leibniz_aux new_sum (n + 1) in
+      (leibniz_aux [@tailcall]) new_sum (n + 1) in
   if delta < 0. then (-1) else leibniz_aux 0. 0
+
+(*
+      Main
+*)
+let test delta =
+  Printf.printf "For delta = %f -> n = %d\n" delta (leibniz_pi delta)
+
+let _ =
+  test 1.;
+  test 0.5;
+  test 0.2;
+  test 0.1;
+  test 0.01;
+  test 0.001;
+  test 0.0001;
+  test 0.000005;

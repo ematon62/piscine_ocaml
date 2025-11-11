@@ -11,7 +11,6 @@ let rec repeat_x (n : int) : string =
     Main
 *)
 let test x =
-  let _ = print_string ("repeat_x " ^ (string_of_int x) ^ ": ") in 
-  print_endline (repeat_x x)
+  Printf.printf "repeat_x %d: %s\n" x (repeat_x x)
 
 let _ = test 5; test 4; test 3; test 2; test 1; test 0; test (-1)

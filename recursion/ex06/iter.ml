@@ -15,8 +15,7 @@ let square x = let _ = print_string (__FUNCTION__ ^ " ") in x * x
 let double x = let _ = print_string (__FUNCTION__ ^ " ") in x * 2
 
 let test f x n = 
-  let _ = print_string ("Testing for f of x: " ^ string_of_int x ^ " and n: " ^ string_of_int n ^ " -> ") in
-  let _ = print_int (iter f x n) in print_newline ()
+  Printf.printf "Testing for f of %d and %n -> %d\n " x n (iter f x n)
 
 let _ =
   test zero 1 (-1);

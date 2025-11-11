@@ -11,12 +11,10 @@ let rec repeat_string ?str:(str="x") (n : int) : string =
     Main
 *)
 let test x =
-  let _ = print_string ("repeat_string " ^ (string_of_int x) ^ ": ") in 
-  print_endline (repeat_string x)
+  Printf.printf "repeat_string %d: %s\n" x (repeat_string x)
 
 let test2 str x =
-  let _ = print_string ("repeat_string " ^ str ^ " " ^ (string_of_int x) ^ ": ") in 
-  print_endline (repeat_string ~str:str x)
+  Printf.printf "repeat_string %s %d: %s\n" str x (repeat_string ~str:str x)
 
 let _ = test 5; test 4; test 3; test 2; test 1; test 0; test (-1)
 

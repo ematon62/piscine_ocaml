@@ -3,8 +3,8 @@ let ft_sum (f: int -> float) (lower: int) (upper: int) : float =
     if (m = upper) then
       (f m) +. n
     else
-      ft_sum_aux ((f m) +. n) (m + 1) in
-  if (upper < lower) then nan else ft_sum_aux 0. lower
+      (ft_sum_aux [@tailcall]) ((f m) +. n) (m + 1) in
+  if (upper < lower) then nan else (ft_sum_aux [@tailcall]) 0. lower
 
 (*
   Main

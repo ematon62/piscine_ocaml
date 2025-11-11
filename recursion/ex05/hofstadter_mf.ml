@@ -25,8 +25,7 @@ let rec hfs_f (n : int) : int =
 *)
 
 let test n = 
-	print_string ("Male of " ^ string_of_int n ^ ": " ^ string_of_int (hfs_m n) ^ "\n");
-	print_string ("Female of " ^ string_of_int n ^ ": " ^ string_of_int (hfs_f n) ^ "\n")
+	Printf.printf "Male of %d: %d\nFemale of %d: %d\n" n (hfs_m n) n (hfs_f n)
 
 let _ =
 	test (-1);

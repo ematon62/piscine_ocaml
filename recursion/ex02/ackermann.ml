@@ -12,7 +12,6 @@ let rec ackermann (m : int) (n : int) : int =
     Main
 *)
 let test x y =
-  let _ = print_string ("ackermann " ^ (string_of_int x) ^ " " ^ (string_of_int y) ^ ": ") in
-  print_endline (string_of_int (ackermann x y))
+  Printf.printf "ackermann %d %d: %d\n" x y (ackermann x y)
 
 let _ = test (-1) 7; test 0 0; test 2 3; test 4 1

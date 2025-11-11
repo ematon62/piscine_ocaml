@@ -8,7 +8,6 @@ let rec tak (x : int) (y : int) (z : int): int =
     z
   
 let test x y z =
-  let _ = print_string ("tak " ^ (string_of_int x) ^ " " ^ (string_of_int y) ^ " " ^ (string_of_int z) ^ ": ") in
-  print_endline (string_of_int (tak x y z))
+  Printf.printf "tak %d %d %d: %d\n" x y z (tak x y z)
 
 let _ = test 1 2 3; test 5 23 7; test 9 1 0; test 1 1 1; test 0 42 0; test 23498 98734 98776;

@@ -20,16 +20,14 @@ let fibonacci (n : int) : int =
         if (k = 1) then
           i + j
         else
-          fibo_aux (i + j) (i) (k - 1) in
+          (fibo_aux [@tailcall]) (i + j) (i) (k - 1) in
   fibo_aux 0 1 n
 
 (*
   Main
 *)
-
 let test n =
-  print_string ("fibonacci " ^ (string_of_int n) ^ " -> ");
-  print_int (fibonacci n); print_newline ()
+  Printf.printf "fibonacci %d: %d\n" n (fibonacci n)
 
 let _ = 
   print_endline "Fibonacci: 0, 1, 1, 2, 3, 5, 8, 13, 21,...";
