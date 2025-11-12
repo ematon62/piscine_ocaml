@@ -12,7 +12,7 @@ let rec converges (f : 'a -> 'a) (x : 'a) (n : int) : bool =
 *)
 let () = 
   let test f x n =
-    Printf.printf "For f of %d and %n, does f converge? -> %s\n" x n (if converges f x n then "yes" else "false") in
+    Printf.printf "For f of %d and %n, does f converge? -> %s\n" x n (if converges f x n then "true" else "false") in
 
   (* un+1 = un * 2, u0 = 2 -> admet pour suite +inf *)
   test (( * ) 2) 2 5;
