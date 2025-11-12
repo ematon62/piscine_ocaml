@@ -10,19 +10,23 @@ let rec iter (f : int -> int) (x : int) (n : int) : int =
 (*
   Main
 *)
-let zero x = let _ = print_string (__FUNCTION__ ^ " ") in 0
-let square x = let _ = print_string (__FUNCTION__ ^ " ") in x * x
-let double x = let _ = print_string (__FUNCTION__ ^ " ") in x * 2
+let () = 
+  let zero x = 0 in
+  let square x = x * x in
+  let double x = x * 2 in
 
-let test f x n = 
-  Printf.printf "Testing for f of %d and %n -> %d\n " x n (iter f x n)
+  let test str f x n = 
+    Printf.printf "Testing for %s of %d and %n -> %d\n " str x n (iter f x n) in
 
-let _ =
-  test zero 1 (-1);
-  test zero 1 (0);
-  test zero 1 (1);
-  test square 2 (-1);
-  test square 2741233534 0;
-  test square 2 4;
-  test double 2 4;
-  
+  test "zero" zero 1 (-1);
+  test "zero" zero 1 (0);
+  test "zero" zero 1 (1);
+  test "square" square 2 (-1);
+  test "square" square 2741233534 0;
+  test "square" square 2 0;
+  test "square" square 2 4;
+  test "double" double 2 0;
+  test "double" double 2 1;
+  test "double" double 2 2;
+  test "double" double 2 3;
+  test "double" double 2 4;

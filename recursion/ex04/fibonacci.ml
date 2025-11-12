@@ -26,11 +26,10 @@ let fibonacci (n : int) : int =
 (*
   Main
 *)
-let test n =
-  Printf.printf "fibonacci %d: %d\n" n (fibonacci n)
-
-let _ = 
-  print_endline "Fibonacci: 0, 1, 1, 2, 3, 5, 8, 13, 21,...";
+let () = 
+  let test n =
+    Printf.printf "fibonacci %d: %d\n" n (fibonacci n) in
+  
   test (-1);
   test (0);
   test (1);
@@ -41,17 +40,6 @@ let _ =
   test (6);
   test (7);
   test (8);
+  test (9);
   test (10);
   test (11);
-  test (50);
-  test (90);
-  test (91); (* Overflow !!!!11!! *)
-  test (92);
-  test (93);
-  test (94);
-  test (95);
-  test (96);
-  test (97);
-  test (98);
-  test (99);
-  test (100);

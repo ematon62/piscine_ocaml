@@ -11,7 +11,25 @@ let rec ackermann (m : int) (n : int) : int =
 (*
     Main
 *)
-let test x y =
-  Printf.printf "ackermann %d %d: %d\n" x y (ackermann x y)
+let () = 
+  let test x y =
+    Printf.printf "ackermann %d %d: %d\n%!" x y (ackermann x y) in
 
-let _ = test (-1) 7; test 0 0; test 2 3; test 4 1
+  test (-1) 7;
+  test 0 0;
+  test 0 2;
+  test 0 3;
+  test 1 0;
+  test 1 1;
+  test 1 2;
+  test 1 3;
+  test 2 0;
+  test 2 1;
+  test 2 2;
+  test 2 3;
+  test 3 0;
+  test 3 1;
+  test 3 2;
+  test 3 3;
+  test 4 0;
+  test 4 1

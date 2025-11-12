@@ -9,16 +9,13 @@ let ft_sum (f: int -> float) (lower: int) (upper: int) : float =
 (*
   Main
 *)
-let square x = float_of_int (x * x)
-let identity x = float_of_int x
-let reciprocal x = 1. /. float_of_int x
-
-(* Test cases *)
 let () =
+  let square x = float_of_int (x * x) in
+  let identity x = float_of_int x in
+  let reciprocal x = 1. /. float_of_int x in
+
   Printf.printf "Sum of squares from 1 to 5 = %f\n" (ft_sum square 1 5);
   Printf.printf "Sum of identity from 3 to 7 = %f\n" (ft_sum identity 3 7);
   Printf.printf "Sum of reciprocals from 1 to 3 = %f\n" (ft_sum reciprocal 1 3);
   Printf.printf "Upper < Lower (5 to 2) = %f\n" (ft_sum square 5 2);
-
-  Printf.printf "Sum of identity from 1 to 1_000_000 = %f\n"
-    (ft_sum identity 1 1_000_000)
+  Printf.printf "Sum of identity from 1 to 1_000_000 = %f\n" (ft_sum identity 1 1_000_000)

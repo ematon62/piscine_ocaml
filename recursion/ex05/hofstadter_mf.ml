@@ -23,12 +23,11 @@ let rec hfs_f (n : int) : int =
 (*
 	Main
 *)
+let () = 
+	let test_male n = 
+		Printf.printf "[Male of %d: %d] " n (hfs_m n) in
+	let test_female n = 
+		Printf.printf "[Female of %d: %d] " n (hfs_f n) in
 
-let test n = 
-	Printf.printf "Male of %d: %d\nFemale of %d: %d\n" n (hfs_m n) n (hfs_f n)
-
-let _ =
-	test (-1);
-	test (0);
-	test 4;
-	test 10;
+	test_male (-1); test_male 0; test_male 1; test_male 2; test_male 3; test_male 4;  test_male 5; print_newline ();
+	test_female (-1); test_female 0; test_female 1; test_female 2; test_female 3; test_female 4;  test_female 5; print_newline ()
