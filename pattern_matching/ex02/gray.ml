@@ -22,9 +22,9 @@ let gray (n : int) : unit =
 (*
     Main
 *)
-let test n = Printf.printf "Gray code of %d:\n" n; gray n; print_newline ()
 
-let _ =
+let () =
+  let test n = Printf.printf "Gray code of %d:\n" n; gray n; print_newline () in
   test (-1);
   test 0;
   test 1;
