@@ -2,7 +2,7 @@ type phosphate = string
 
 type deoxyribose = string
 
-type nucleobase = A | T | C | G | None
+type nucleobase = A | T | C | G | U | None
 
 type nucleotide = {phosphate: phosphate; deoxyribose: deoxyribose; nucleobase: nucleobase}
 
@@ -15,7 +15,7 @@ let generate_nucleotide (c : char) : nucleotide =
 
 type helix = nucleotide list
 
-let string_of_nucleobase (n : nucleobase) = match n with | A -> "A" | T -> "T" | C -> "C" | G -> "G" | None -> "None"
+let string_of_nucleobase (n : nucleobase) = match n with | A -> "A" | T -> "T" | C -> "C" | G -> "G" | U -> "U" | None -> "None"
 
 let rec generate_helix (n : int) : helix = match n with
   | _ when n <= 0 -> []
@@ -31,21 +31,31 @@ let rec complementary_helix (h : helix) : helix = match h with
   | [] -> []
   | hd::tl -> (generate_nucleotide (match hd.nucleobase with | A -> 'T' | T -> 'A' | G -> 'C' | _ -> 'G'))::(complementary_helix tl)
 
+type rna = nucleobase list
+
+let rec generate_rna (h : helix) : rna = match h with
+  | [] -> []
+  | hd::tl -> (match hd.nucleobase with | A -> U | T -> A | G -> C | _ -> G)::(generate_rna tl)
+
 (*
   Main
 *)
+let rec rna_to_string rna = match rna with
+  | [] -> ""
+  | hd::tl -> (string_of_nucleobase hd) ^ (rna_to_string tl)
+
 let () = 
   let _ = Random.self_init () in
-  let test_helix_string n = 
+  let test_rna n = 
     let h = generate_helix n in
     let _ = Printf.printf "Printing randomly generated helix: %s\n" (helix_to_string h) in
-    Printf.printf "     Printing complementary helix: %s\n" (helix_to_string (complementary_helix h)) in
-  test_helix_string (-1); print_newline ();
-  test_helix_string 0; print_newline ();
-  test_helix_string 1; print_newline ();
-  test_helix_string 2; print_newline ();
-  test_helix_string 3; print_newline ();
-  test_helix_string 4; print_newline ();
-  test_helix_string 5; print_newline ();
-  test_helix_string 6; print_newline ();
-  test_helix_string 7; print_newline ();
+    Printf.printf "Printing corresponding rna: %s\n" (rna_to_string (generate_rna h)) in
+  test_rna (-1); print_newline ();
+  test_rna 0; print_newline ();
+  test_rna 1; print_newline ();
+  test_rna 2; print_newline ();
+  test_rna 3; print_newline ();
+  test_rna 4; print_newline ();
+  test_rna 5; print_newline ();
+  test_rna 6; print_newline ();
+  test_rna 7; print_newline ();
